@@ -29,7 +29,7 @@ const controls = [
     }
 ]
 
-export default function AdminAboutView({formData, setFormData}) {
+export default function AdminAboutView({formData, setFormData, handleSaveData}) {
     return (
         <div className="w-full">
             <div className="bg-white shadow-md rounded
@@ -39,6 +39,7 @@ export default function AdminAboutView({formData, setFormData}) {
             formData={formData}
             setFormData={setFormData}/>
             <button
+            onClick={()=> handleSaveData('about')}
             className="mt-[10px] border border-red-600 p-4 font-bold
             text-[16px] hover:bg-gray-200 duration-75 ease-in-out">
                 Add Info

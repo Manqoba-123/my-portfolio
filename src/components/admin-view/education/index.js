@@ -10,6 +10,12 @@ const controls = [
         label:"Enter your degree name",
     },
     {
+        name:"university",
+        placeholder:"Name of the university",
+        type:"text",
+        label:"Enter name of university",
+    },
+    {
         name:"year",
         placeholder:"Year",
         type:"text",
@@ -23,13 +29,13 @@ const controls = [
     },
     {
         name:"year",
-        placeholder:"Year",
+        placeholder:"Last year attended",
         type:"text",
         label:"Year",
     }
 ]
 
-export default function AdminEducationView({formData, setFormData}) {
+export default function AdminEducationView({formData, setFormData, handleSaveData}) {
     return (
         <div className="w-full">
             <div className="bg-white shadow-md rounded
@@ -39,6 +45,7 @@ export default function AdminEducationView({formData, setFormData}) {
             formData={formData}
             setFormData={setFormData}/>
             <button
+            onClick={()=> handleSaveData('education')}
             className="mt-[10px] border border-red-600 p-4 font-bold
             text-[16px] hover:bg-gray-200 duration-75 ease-in-out">
                 Add Info
